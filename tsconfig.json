@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es2019",
+    ],
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "sourceMap": true,
+    "declaration": true,
+    "target": "es2018",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "outDir": "./build",
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "inlineSources": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true
+  },
+  "exclude": [
+    "./node_modules",
+    "./build"
+  ]
+}
