@@ -4,8 +4,12 @@
   "description": "블로그형 웹 서비스",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "test": "test"
+    "clean": "lerna clean",
+    "bootstrap": "lerna bootstrap --hoist",
+    "start": "lerna run start --stream --parallel",
+    "build": "lerna run build",
+    "lint": "lerna run lint",
+    "test": "lerna run test"
   },
   "dependencies": {
     "lerna": "^4.0.0",
