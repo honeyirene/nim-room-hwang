@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@nrh/protocols": "1.0.0",
     "typescript": "^4.2.3"
   }
 }
