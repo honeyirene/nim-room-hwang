@@ -16,6 +16,8 @@ export interface Protocol<Req, Resp, Schema extends TypedSchema> {
 
 	tmp_req?: Req;
 	tmp_resp?: Resp;
+
+	db: DatabaseConnectionMode;
 }
 
 export type ProtocolReqType<T> = T extends Protocol<infer Req, infer Resp, any> ? Req : never;
