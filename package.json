@@ -12,9 +12,9 @@
     "test": "lerna run test"
   },
   "workspaces":[
-    "@nrh/backend",
-    "@nrh/frontend",
-    "@nrh/protocols"
+    "packages/backend",
+    "packages/frontend",
+    "packages/protocols"
   ],
   "dependencies": {
     "lerna": "^4.0.0",

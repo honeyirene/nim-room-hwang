@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "lib": [
-      "es2019",
+      "dom",
     ],
     "moduleResolution": "node",
     "module": "commonjs",
