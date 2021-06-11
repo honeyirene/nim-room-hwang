@@ -1,4 +1,4 @@
-import express = require('express');
+import express from 'express';
 import { SampleApi } from "../apis";
 
 const router = express.Router();
