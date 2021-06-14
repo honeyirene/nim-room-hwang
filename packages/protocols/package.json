@@ -2,7 +2,11 @@
   "name": "@nrh/protocols",
   "version": "1.0.0",
   "description": "서버 프론트 간 통신 규격",
-  "main": "index.ts",
+  "types": "./build/src/index.d.ts",
+  "main": "./build/src/index.js",
+  "files": [
+    "build"
+  ],
   "scripts": {
     "build": "tsc"
   },

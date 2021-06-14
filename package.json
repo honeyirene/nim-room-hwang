@@ -11,11 +11,14 @@
     "lint": "lerna run lint",
     "test": "lerna run test"
   },
-  "workspaces":[
-    "packages/backend",
-    "packages/frontend",
-    "packages/protocols"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@nrh/*"
+    ]
+  },
   "dependencies": {
     "lerna": "^4.0.0",
     "lodash": "^4.17.21",

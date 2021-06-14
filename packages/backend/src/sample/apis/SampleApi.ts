@@ -1,4 +1,4 @@
-import { sampleProtocol } from "packages/protocols/src";
+import { sampleProtocol } from '@nrh/protocols';
 import { Api } from "../../shared/";
 
 type TargetApi = Api<typeof sampleProtocol>;
