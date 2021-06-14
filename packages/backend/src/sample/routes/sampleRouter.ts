@@ -1,5 +1,5 @@
 import express from 'express';
-import { sampleProtocol } from 'packages/protocols/src';
+import { sampleProtocol } from '@nrh/protocols';
 import { registerProtocol } from '../../shared';
 import { SampleApi } from "../apis";
 

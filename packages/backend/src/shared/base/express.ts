@@ -1,6 +1,6 @@
 import yup from 'yup';
 import express from 'express';
-import { Protocol } from 'packages/protocols/src';
+import { Protocol } from '@nrh/protocols';
 import { TypedSchema } from 'yup/lib/util/types';
 import { Api } from './api';
 import { SchemaObjectDescription } from 'yup/lib/schema';
