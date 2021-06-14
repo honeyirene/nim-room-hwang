@@ -16,7 +16,9 @@
       "packages/*"
     ],
     "nohoist": [
-      "**/@nrh/*"
+      "**/@nrh/*",
+      "**/react-native",
+      "**/react-native/**"
     ]
   },
   "dependencies": {
