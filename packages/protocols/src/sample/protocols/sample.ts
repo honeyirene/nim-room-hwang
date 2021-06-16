@@ -9,10 +9,11 @@ interface SampleReq {
 	b: number;
 }
 
-const sampleSchema = yup.object({
+const sampleSchema = yup.object().shape({
 	a: yup.string().required(),
 	b: yup.number().required(),
 });
+const assignable_sample: SampleReq = {} as yup.InferType<typeof sampleSchema>;
 
 interface SampleResp {
 	result: string;
