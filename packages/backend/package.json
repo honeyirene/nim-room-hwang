@@ -4,6 +4,7 @@
   "description": "백엔드 서버",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --config webpack.config.js",
     "start": "webpack --mode=development --watch"
   },
   "author": "",
