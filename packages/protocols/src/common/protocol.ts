@@ -1,4 +1,4 @@
-import yup = require('yup');;
+import yup = require('yup');
 import { TypedSchema } from 'yup/lib/util/types';
 
 export type HttpMethod = 'get' | 'post' | 'delete' | 'put';

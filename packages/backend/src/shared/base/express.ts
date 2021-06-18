@@ -1,4 +1,4 @@
-import yup = require('yup');;
+import yup = require('yup');
 import express from 'express';
 import { Protocol } from '@nrh/protocols';
 import { TypedSchema } from 'yup/lib/util/types';
