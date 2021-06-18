@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "nrh",
   "private": true,
   "description": "블로그형 웹 서비스",
   "main": "index.js",
@@ -25,5 +25,9 @@
     "lerna": "^4.0.0",
     "lodash": "^4.17.21",
     "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "fork-ts-checker-notifier-webpack-plugin": "^4.0.0",
+    "fork-ts-checker-webpack-plugin": "^6.2.10"
   }
 }
