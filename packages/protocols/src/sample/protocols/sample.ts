@@ -1,7 +1,7 @@
 import { DatabaseConnectionMode, Protocol } from "../../common";
 import yup = require('yup');
 
-const resource = 'api/sample';
+const resource = '/api/sample';
 export const resource_sample = resource;
 
 interface SampleReq {
