@@ -11,7 +11,7 @@ const isLocal = !!process.env.isLocal;
 const rootPath = path.resolve(__dirname);
 const srcPath = path.resolve(rootPath, 'src');
 
-function makePlugin() {
+function makePlugins() {
 	const plugins = [
 		new webpack.ProgressPlugin(),
 	];
