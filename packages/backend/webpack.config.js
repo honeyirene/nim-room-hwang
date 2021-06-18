@@ -6,7 +6,6 @@ const NodemonPlugin = require('nodemon-webpack-plugin');
 const webpack = require('webpack');
 
 const env = process.env.NODE_ENV || 'production';
-const isLocal = !!process.env.isLocal;
 
 const rootPath = path.resolve(__dirname);
 const srcPath = path.resolve(rootPath, 'src');
@@ -18,20 +17,14 @@ function makePlugins() {
 
 	if (env === 'development') {
 		const plugins_development = [
-			new ForkTsCheckerWebpackPlugin({
-				tslint: false,
-				useTypescriptIncrementalApi: true,
+			new ForkTsCheckerWebpackPlugin(),
+			new ForkTsCheckerNotifierWebpackPlugin(),
+			new NodemonPlugin({
+				watch: path.resolve(__dirname, '.webpack'),
+				script: path.resolve(__dirname, '.webpack', 'main.js'),
 			}),
-			new ForkTsCheckerNotifierWebpackPlugin({
-				title: 'TypeScript',
-				excludeWarnings: false,
-			}),
-		]
+		];
 		for (const p of plugins_development) { plugins.push(p); }
-	}
-
-	if (isLocal) {
-		plugins.push(new NodemonPlugin());
 	}
 
 	return plugins;
@@ -44,7 +37,7 @@ const config = {
 	devtool: 'source-map',
 	output: {
 		libraryTarget: 'commonjs',
-		path: path.join(__dirname, 'dist'),
+		path: path.join(__dirname, '.webpack'),
 		filename: '[name].js',
 	},
 	module: {
