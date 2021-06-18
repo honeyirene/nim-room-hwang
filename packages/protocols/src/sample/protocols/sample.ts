@@ -1,5 +1,5 @@
 import { DatabaseConnectionMode, Protocol } from "../../common";
-import yup from 'yup';
+import yup = require('yup');;
 
 const resource = 'api/sample';
 export const resource_sample = resource;
