@@ -28,6 +28,8 @@
   },
   "devDependencies": {
     "fork-ts-checker-notifier-webpack-plugin": "^4.0.0",
-    "fork-ts-checker-webpack-plugin": "^6.2.10"
+    "fork-ts-checker-webpack-plugin": "^6.2.10",
+    "nodemon": "^2.0.7",
+    "nodemon-webpack-plugin": "^4.5.2"
   }
 }
