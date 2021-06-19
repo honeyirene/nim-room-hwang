@@ -41,7 +41,7 @@ export const SampleComponent: React.FC<Props> = props => {
 
 	return (
 		<>
-			<h1>{name} counter</h1>
+			<h1>{name} sample sender</h1>
 			<input
 				type="string"
 				onChange={handleA}

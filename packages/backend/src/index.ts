@@ -1,6 +1,6 @@
 import app from './app';
 
-const port = 3000;
+const port = 8253;
 
 app.get('/', (req, res) => {
 	res.send('Hello World!');
