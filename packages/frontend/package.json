@@ -4,7 +4,8 @@
   "description": "웹 프론트",
   "main": "app.tsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "check:watch": "tsc --skipLibCheck --watch",
+    "build": "cross-env PUBLIC_URL=./frontend SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "start": "cross-env PORT=3003 PUBLIC_URL=./frontend SKIP_PREFLIGHT_CHECK=true react-scripts start"
   },
   "author": "",
