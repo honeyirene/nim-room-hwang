@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react';
-import { Button } from 'react-native';
 import { ClientGroup } from '../../shared';
 
 interface Props {
@@ -51,8 +50,8 @@ export const SampleComponent: React.FC<Props> = props => {
 				onChange={handleB}
 			/>
 
-			<Button
-				onPress={onClick}
+			<button
+				onClick={onClick}
 				title={'send'}
 			/>
 		</>
