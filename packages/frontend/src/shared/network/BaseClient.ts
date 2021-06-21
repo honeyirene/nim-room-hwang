@@ -52,15 +52,8 @@ export class BaseClient {
 				throw e;
 			}
 
-			if (json.isSuccess) {
-				const data: Resp = json.data;
-				return data;
-
-			} else {
-				const e = new Error(json.msg ?? json.message);
-				e.name = json.errorCd;
-				throw e;
-			}
+			const data: Resp = json.data;
+			return data;
 		};
 		return fn;
 	}
