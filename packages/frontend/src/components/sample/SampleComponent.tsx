@@ -55,7 +55,7 @@ export const SampleComponent: React.FC<Props> = props => {
 		return <h1>loading...</h1>;
 	}
 	if (error !== null) {
-		return <h1> {error} </h1>
+		return <h1> {JSON.stringify(error)} </h1>
 	}
 
 	return (
