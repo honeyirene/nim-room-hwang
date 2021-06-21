@@ -18,13 +18,10 @@ interface Options {
 }
 
 export class BaseClient {
-	private readonly host: string;
-	private readonly opts: Options;
-
-	constructor(host: string, opts: Options) {
-		this.host = host;
-		this.opts = opts;
-	}
+	constructor(
+		private readonly host: string,
+		private readonly opts: Options
+	) { }
 
 	public handle<Req extends { [key: string]: any }, Resp, Schema extends TypedSchema>(
 		api: Protocol<Req, Resp, Schema>,

@@ -9,9 +9,14 @@ export const SampleComponent: React.FC<Props> = props => {
 	const { name } = props;
 
 	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [error, setError] = useState<Error | null>(null);
 
+	// for req
 	const [a, setA] = useState<string>('sample');
 	const [b, setB] = useState<number>(0);
+
+	// for resp
+	const [resp, setResp] = useState<object | null>(null);
 
 	const client = useMemo(() => {
 		const group = new ClientGroup();
@@ -28,14 +33,29 @@ export const SampleComponent: React.FC<Props> = props => {
 		setB(v);
 	}
 
+	const request = async () => {
+		try {
+			setIsLoading(true);
+			const resp = await client.sample({ a, b });
+			setResp(resp);
+		}
+		catch (e) {
+			setError(e);
+		}
+		finally {
+			setIsLoading(false);
+		}
+	};
+
 	const onClick = async () => {
-		setIsLoading(true);
-		await client.sample({ a, b });
-		setIsLoading(false);
-	}
+		await request();
+	};
 
 	if (isLoading) {
 		return <h1>loading...</h1>;
+	}
+	if (error !== null) {
+		return <h1> {error} </h1>
 	}
 
 	return (
@@ -50,10 +70,14 @@ export const SampleComponent: React.FC<Props> = props => {
 				onChange={handleB}
 			/>
 
-			<button
-				onClick={onClick}
-				title={'send'}
-			/>
+			<button onClick={onClick}>
+				send
+			</button>
+
+			{resp !== null
+				? JSON.stringify(resp)
+				: undefined
+			}
 		</>
 	);
 }
