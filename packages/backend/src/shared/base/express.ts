@@ -65,62 +65,14 @@ export async function validateSchema<T extends object>(
 	req: express.Request,
 	schema: yup.BaseSchema<T>,
 ): Promise<T> {
-	const raw = createRawInput(req, schema);
+	const raw = {
+		...req.params,
+		...req.query,
+		...req.body,
+	};
 
 	const body = await schema.validate(raw);
 	return body;
-}
-
-function createRawInput<T extends object>(
-	req: express.Request,
-	schema: yup.BaseSchema<T>,
-) {
-	if (Array.isArray(req.body)) {
-		const raw = req.body;
-		return raw;
-
-	} else {
-		const raw = {
-			...req.params,
-			...req.query,
-			...req.body,
-		};
-
-		if (schema.type !== 'object') {
-			throw new Error();
-		}
-		const description = schema.describe() as SchemaObjectDescription;
-		const fields = description.fields;
-		const entries = Object.entries(fields);
-
-		// query string으로 크기 1인 배열을 넘기면
-		// express.req로는 배열인지 문자열인지 구분할 수 없다
-		// schema 열어서 배열이면 적당히 변환
-		for (const [key, desc] of entries) {
-			const value = raw[key];
-			if (desc.type === 'array') {
-				if (typeof value === 'string') {
-					raw[key] = [value];
-				}
-			}
-		}
-
-		// query string + nullable integer 대응
-		// query string은 문자열이라서 "null" 넣어봤자
-		// yup에서 파싱하다 터져서 NaN으로 튀어나온다. 명시적으로 바꾸기
-		for (const [key, desc] of entries) {
-			const value = raw[key];
-			if (desc.type === 'number') {
-				if (value === 'null') {
-					raw[key] = null;
-				} else if (value === '') {
-					raw[key] = null;
-				}
-			}
-		}
-
-		return raw;
-	}
 }
 
 function writeJson<T>(res: express.Response, resp: T) {
