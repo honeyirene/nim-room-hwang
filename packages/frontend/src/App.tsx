@@ -5,7 +5,10 @@ import {
 } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
 import './App.css';
-import { MainComponent } from './components';
+import {
+	MainComponent,
+	SampleComponent,
+} from './components';
 
 interface Props {
 }
@@ -27,13 +30,7 @@ const App: React.FC<Props> = props => {
 							<Route
 								exact={false}
 								path={`/main`}
-								render={(routerProps => {
-									return (
-										<>
-											{'asdf'}
-										</>
-									);
-								})}
+								render={_ => <SampleComponent name='샘플' />}
 							/>
 						</Switch>
 					</Container>

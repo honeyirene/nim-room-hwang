@@ -7,17 +7,8 @@ import {
 	Switch,
 } from 'react-router-dom';
 import App from './App';
-import Counter from './components/Counter'
-import { SampleComponent } from './components/sample';
 
-// // index.tsx
-// ReactDOM.render(
-// 	<React.StrictMode>
-// 		<Counter name='react' />
-// 		<SampleComponent name='nim room hwang' />
-// 	</React.StrictMode>,
-// 	document.getElementById('root')
-// );
+import './index.scss';
 
 function main() {
 	const defaultPath = `/main`;
