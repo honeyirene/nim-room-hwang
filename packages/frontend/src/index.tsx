@@ -1,13 +1,29 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import Counter from "./components/Counter"
-import { SampleComponent } from "./components/sample";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {
+	HashRouter,
+	Redirect,
+	Route,
+	Switch,
+} from 'react-router-dom';
+import App from './App';
 
-// index.tsx
-ReactDOM.render(
-	<React.StrictMode>
-		<Counter name='react' />
-		<SampleComponent name='nim room hwang' />
-	</React.StrictMode>,
-	document.getElementById("root")
-);
+import './index.scss';
+
+function main() {
+	const defaultPath = `/main`;
+	ReactDOM.render(
+		<HashRouter>
+			<Switch>
+				<Route
+					path={`/main`}
+					render={props => <App {...props.match.params} />}
+				/>
+				<Route
+					render={() => <Redirect to={defaultPath} />}
+				/>
+			</Switch>
+		</HashRouter>,
+		document.getElementById('root'));
+}
+main();
