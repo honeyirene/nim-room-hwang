@@ -1,25 +1,16 @@
-import React, {
-	useCallback,
-	useContext,
-	useMemo,
-} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
 	Container,
 	Menu,
-	Dropdown,
-	Button,
 } from 'semantic-ui-react';
 
 export const MenuInternalComponent: React.FC = props => {
 
-	const categories = [
-		'델리고',
-		'티시안',
-		'프로비',
-		'디육',
-		'허니린',
-		'린카루',
+	const menuList = [
+		{ name: 'Probi', page: 'probi' },
+		{ name: 'D6', page: 'd6' },
+		{ name: '허니린', page: 'honeyirene' },
 	];
 
 	return (
@@ -30,14 +21,16 @@ export const MenuInternalComponent: React.FC = props => {
 			>
 				{`님룸황`}
 			</Menu.Item>
-			{categories.map(category => {
+			{menuList.map(menu => {
 				return (
 					<Menu.Item
-						key={category}
-						name={category}
+						key={menu.page}
+						name={menu.name}
 						active={true}
+						as={Link}
+						to={`/main/${menu.page}`}
 					>
-						{category.replace(/_/g, ' ')}
+						{menu.name.replace(/_/g, ' ')}
 					</Menu.Item>
 				);
 			})}

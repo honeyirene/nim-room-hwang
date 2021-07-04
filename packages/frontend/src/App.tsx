@@ -6,7 +6,10 @@ import {
 import { Container } from 'semantic-ui-react';
 import './App.css';
 import {
+	D6Component,
+	HoneyireneComponent,
 	MainComponent,
+	ProbiComponent,
 	SampleComponent,
 } from './components';
 
@@ -27,6 +30,21 @@ const App: React.FC<Props> = props => {
 						id={'app-main'}
 					>
 						<Switch>
+							<Route
+								exact={true}
+								path={`/main/d6`}
+								render={_ => <D6Component name='D6' />}
+							/>
+							<Route
+								exact={true}
+								path={`/main/probi`}
+								render={_ => <ProbiComponent name='probi' />}
+							/>
+							<Route
+								exact={true}
+								path={`/main/honeyirene`}
+								render={_ => <HoneyireneComponent name='허니린' />}
+							/>
 							<Route
 								exact={false}
 								path={`/main`}
