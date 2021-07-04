@@ -27,3 +27,19 @@ yarn workspace [my-package] remove [package] --<options>
 ```
 yarn add [package] -W
 ```
+<br>
+<br>
+
+## 방랑자를 위한 메뉴얼
+### 리포 클론받고 나서 뭘 해야할지 모르겠을 때
+1. 초기 설정
+	- cli 실행 후 홈 디렉토리로 이동
+	- (선택 : 만약 리포 클론 받은 직후면 필요없음) git clean -dfx
+
+2. 백엔드 서버 실행
+	- cli 실행 후 packages/protocols로 이동
+	- npm run build
+
+3. 프론트엔드 실행
+	- cli 실행 후 package/frontend로 이동
+	- npm run start
